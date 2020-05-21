@@ -60,6 +60,15 @@
           "build/Grpc.Tools.targets": {}
         }
       },
+      "MaterialSkin/0.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/MaterialSkin.dll": {}
+        }
+      },
       "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
         "type": "package",
         "compile": {
@@ -206,6 +215,18 @@
         "tools/windows_x86/protoc.exe"
       ]
     },
+    "MaterialSkin/0.2.1": {
+      "sha512": "/6AEh6qIeNKbxsha7IHBb5s50tyvB0iZuGQPB9mjyR+mRdfQ7vnKTklwI26Y/DbrymTcg+aBHSgCgAT7/qLIrQ==",
+      "type": "package",
+      "path": "materialskin/0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MaterialSkin.dll",
+        "materialskin.0.2.1.nupkg.sha512",
+        "materialskin.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
       "sha512": "XRzK7ZF+O6FzdfWrlFTi1Rgj2080ZDsd46vzOjadHUB0Cz5kOvDG8vI7caa5YFrsHQpcfn0DxtjS4E46N4FZsA==",
       "type": "package",
@@ -270,7 +291,8 @@
     ".NETCoreApp,Version=v3.0": [
       "Google.Protobuf >= 3.12.0",
       "Grpc.Net.Client >= 2.28.0",
-      "Grpc.Tools >= 2.29.0"
+      "Grpc.Tools >= 2.29.0",
+      "MaterialSkin >= 0.2.1"
     ]
   },
   "packageFolders": {
@@ -280,11 +302,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj",
+      "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\MEME\\.nuget\\packages\\",
-      "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\obj\\",
+      "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -327,6 +349,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.29.0, )"
+          },
+          "MaterialSkin": {
+            "target": "Package",
+            "version": "[0.2.1, )"
           }
         },
         "imports": [
@@ -365,5 +391,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MaterialSkin 0.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MaterialSkin",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.0"
+      ]
+    }
+  ]
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj": {}
+    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj": {}
   },
   "projects": {
-    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj": {
+    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj",
+        "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj",
+        "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\MEME\\.nuget\\packages\\",
-        "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\obj\\",
+        "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -54,6 +54,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.29.0, )"
+            },
+            "MaterialSkin": {
+              "target": "Package",
+              "version": "[0.2.1, )"
             }
           },
           "imports": [

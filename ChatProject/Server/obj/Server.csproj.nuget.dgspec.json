@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\Server.csproj": {}
+    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\Server.csproj": {
+    "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\Server.csproj",
+        "projectPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\MEME\\.nuget\\packages\\",
-        "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\obj\\",
+        "outputPath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\de la Bibi\\CNATema3Repo-master (2)\\CNATema3Repo-master\\ChatProject\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
