@@ -163,7 +163,10 @@ namespace Generated {
       }
     }
 
-  }
+        internal class MessageRequestBase
+        {
+        }
+    }
 
   #endregion
 

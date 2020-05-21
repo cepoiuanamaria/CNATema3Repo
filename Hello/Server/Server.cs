@@ -1,42 +1,22 @@
-﻿using Generated;
-using Grpc.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Server
 {
-
-    internal class HelloOperationService : Generated.MessageReply.MessageReplyBase
-    {
-        public override Task<OperationResponse> SayHello(MessageRequest request, ServerCallContext context)
-        {
-            System.Console.WriteLine("Hello, " + request.Name + "!");
-            var result = "";
-            return Task.FromResult(new OperationResponse() { Message = result });
-        }
-    }
-
     class Server : IDisposable
     {
-
-
         public Grpc.Core.Server GrpcServer { get; private set; }
 
         public Action CloseServerAction { get; set; }
 
-
-
-
-        //public IEnumerable<Grpc.Core.ServerServiceDefinition> Services
-        //{
-        //    get
-        //    {
-        //        yield return Generated.MessageReply.BindService(new  SayHelloOperationResponse());
-
-        //    }
-        //}
+        public IEnumerable<Grpc.Core.ServerServiceDefinition> Services
+        {
+            get
+            {
+                yield return Generated.MessageReply.BindService(new GreetOperationService());
+            }
+        }
 
         public Server(string host, int port)
         {
@@ -57,7 +37,7 @@ namespace Server
 
         private void LoadServices()
         {
-           // Services.ToList().ForEach(service => GrpcServer.Services.Add(service));
+            Services.ToList().ForEach(service => GrpcServer.Services.Add(service));
         }
 
         public void Dispose()
@@ -69,5 +49,3 @@ namespace Server
         }
     }
 }
-
-
