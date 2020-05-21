@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZqgqeHAXxRykwm3pgQyyGkI68STToMXLRvA2z77x2d6bizJkhlsHP7maaD6fTrlpg2CSVHB9gSOkvSxHMLS9Cg==",
+  "dgSpecHash": "huEfOO1raTlgfjzG/bjle8E0my1b+tScUDi/JhNse3qHvegR8siJ7X9v8Y2ULfSY5uhDDc46GbDpucLPtaIwOg==",
   "success": true,
-  "projectFilePath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\ChatProject\\Client\\Client.csproj",
+  "projectFilePath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MEME\\.nuget\\packages\\google.protobuf\\3.12.0\\google.protobuf.3.12.0.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\grpc.core.api\\2.27.0\\grpc.core.api.2.27.0.nupkg.sha512",
@@ -11,7 +11,11 @@
     "C:\\Users\\MEME\\.nuget\\packages\\grpc.tools\\2.29.0\\grpc.tools.2.29.0.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.1.1\\microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.1\\system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
-    "C:\\Users\\MEME\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\MEME\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

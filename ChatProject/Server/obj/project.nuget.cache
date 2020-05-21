@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dVrlkl0Yr2lwNu4A9XG5Qe2q1JBfpi+fcZGtj3aBr0q9tRhBtAXQ/NVdzui4tsuyW/Kdp1XRjTRKXaGL9x8/wg==",
+  "dgSpecHash": "ivq7G/POJAfg8i/KJgK3U2hjW1KDIxGC6UfU3pyMaRbuBV43l0GG/d+WCGIH0ZddwuKo+o1Y/9kb2LQzpztxfw==",
   "success": true,
-  "projectFilePath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\ChatProject\\Server\\Server.csproj",
+  "projectFilePath": "D:\\UNI\\Anul2\\Semestrul2\\CNA\\CNATema3Repo\\ChatProject\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MEME\\.nuget\\packages\\google.protobuf\\3.11.2\\google.protobuf.3.11.2.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\grpc.aspnetcore\\2.27.0\\grpc.aspnetcore.2.27.0.nupkg.sha512",
@@ -24,7 +24,11 @@
     "C:\\Users\\MEME\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.1\\microsoft.extensions.primitives.2.1.1.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.1\\system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
     "C:\\Users\\MEME\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\MEME\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+    "C:\\Users\\MEME\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\MEME\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }
