@@ -12,6 +12,7 @@ namespace Server
     {
         public static void Main(string[] args)
         {
+            Console.Title = "Server";
             CreateHostBuilder(args).Build().Run();
         }
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\ActionsINChat.proto" />
     <None Remove="Protos\greet.proto" />
+    <None Remove="Protos\MessageReply.proto" />
+    <None Remove="Protos\MessageRequest.proto" />
+    <None Remove="Protos\OperationResponse.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\actionsINChat.proto" GrpcServices="Client" />
     <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\messageReply.proto" GrpcServices="Client">
+      <ProtoRoot>Protos\</ProtoRoot>
+    </Protobuf>
+    <Protobuf Include="Protos\messageRequest.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\operationResponse.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

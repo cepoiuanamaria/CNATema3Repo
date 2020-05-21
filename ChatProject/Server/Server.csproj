@@ -1,11 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\actionsINChat.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\ActionsINChat.proto" />
+    <None Remove="Protos\messageReply.proto" />
+    <None Remove="Protos\MessageRequest.proto" />
+    <None Remove="Protos\operationResponse.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\actionsINChat.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\messageReply.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\messageRequest.proto" GrpcServices="Server" ProtoRoot="Protos\" />
+    <Protobuf Include="Protos\operationResponse.proto" GrpcServices="Server" ProtoRoot="Protos\" />
   </ItemGroup>
 
   <ItemGroup>

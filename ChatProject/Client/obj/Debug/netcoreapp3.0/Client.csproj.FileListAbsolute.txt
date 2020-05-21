@@ -9,7 +9,6 @@ D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\bin\Debug\netcoreapp
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\bin\Debug\netcoreapp3.0\Grpc.Net.Client.dll
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\bin\Debug\netcoreapp3.0\Grpc.Net.Common.dll
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.csprojAssemblyReference.cache
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.csproj.CoreCompileInputs.cache
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.AssemblyInfoInputs.cache
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.AssemblyInfo.cs
@@ -17,3 +16,4 @@ D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.dll
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.pdb
 D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.genruntimeconfig.cache
+D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\ChatProject\Client\obj\Debug\netcoreapp3.0\Client.csprojAssemblyReference.cache

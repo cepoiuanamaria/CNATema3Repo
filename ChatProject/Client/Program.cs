@@ -1,22 +1,32 @@
-﻿using Grpc.Net.Client;
+﻿using Grpc.Core;
+using Grpc.Net.Client;
 using Server;
+using Server.Protos;
 using System;
-using System.Threading.Tasks;
 
 namespace Client
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Name: ");
-            var name = Console.ReadLine();
-            var input = new HelloRequest { Name = name };
+            Console.Title="Client";
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new Greeter.GreeterClient(channel);
-            var reply = await client.SayHelloAsync(input);
-            Console.WriteLine(reply.Message);
-            Console.ReadLine();
+
+            var client = new MessageReply.MessageReplyClient(channel);
+
+            Console.Write("Name: ");
+
+            var response = client.SayHello(new MessageRequest
+            {
+                Name = Console.ReadLine(),
+            });
+            Console.WriteLine(response.Message);
+
+            // Shutdown
+            channel.ShutdownAsync().Wait();
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }

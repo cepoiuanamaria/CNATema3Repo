@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "messageRequest.proto";
+import "operationResponse.proto";
+
+option csharp_namespace = "Server.Protos";
+
+service MessageReply{
+	rpc SayHello (MessageRequest) returns (OperationResponse);
+}
