@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "Generated";
-
-message OperationResponse
-{
-	string message = 1;
-}

@@ -1,18 +1,28 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Server
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            using (Server server = new Server(Configuration.HOST, Configuration.PORT))
-            {
-                server.CloseServerAction = () => Console.ReadKey();
-                server.Start();
-            }
+            Console.Title = "Server";
+            CreateHostBuilder(args).Build().Run();
         }
+
+        // Additional configuration is required to successfully run gRPC on macOS.
+        // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }
-
-

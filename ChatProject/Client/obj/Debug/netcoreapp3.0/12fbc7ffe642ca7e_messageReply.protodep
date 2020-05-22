@@ -1,4 +1,0 @@
-obj\Debug\netcoreapp3.0/MessageReply.cs \
-obj\Debug\netcoreapp3.0/MessageReplyGrpc.cs: Protos/messageRequest.proto\
- Protos/operationResponse.proto\
- Protos/messageReply.proto

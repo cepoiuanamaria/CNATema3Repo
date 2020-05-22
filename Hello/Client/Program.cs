@@ -1,4 +1,7 @@
 ﻿using Grpc.Core;
+using Grpc.Net.Client;
+using Server;
+using Server.Protos;
 using System;
 
 namespace Client
@@ -7,19 +10,18 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            const string Host = "localhost";
-            const int Port = 16842;
+            Console.Title="Client";
+            var channel = GrpcChannel.ForAddress("https://localhost:5001");
 
-            var channel = new Channel($"{Host}:{Port}", ChannelCredentials.Insecure);
-    
-            var client = new Generated.MessageReply.MessageReplyClient(channel);
+            var client = new MessageReply.MessageReplyClient(channel);
 
             Console.Write("Name: ");
 
-            var response = client.SayHello(new Generated.MessageRequest{
-
+            var response = client.SayHello(new MessageRequest
+            {
                 Name = Console.ReadLine(),
             });
+            Console.WriteLine(response.Message);
 
             // Shutdown
             channel.ShutdownAsync().Wait();
@@ -28,5 +30,3 @@ namespace Client
         }
     }
 }
-
-
