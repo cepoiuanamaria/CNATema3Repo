@@ -8,6 +8,7 @@ namespace Client2
 {
     static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +17,8 @@ namespace Client2
 
         static void Main()
         {
+            //AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+            //var channel2 = GrpcChannel.ForAddress("https://localhost:5001");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

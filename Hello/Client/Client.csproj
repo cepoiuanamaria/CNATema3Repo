@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <None Remove="Protos\ActionsINChat.proto" />
-    <None Remove="Protos\greet.proto" />
+    <None Remove="Protos\chat.proto" />
     <None Remove="Protos\MessageReply.proto" />
     <None Remove="Protos\MessageRequest.proto" />
     <None Remove="Protos\OperationResponse.proto" />
@@ -35,12 +35,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MaterialSkin" Version="0.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Protobuf Include="Protos\actionsINChat.proto" GrpcServices="Client" />
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\chat.proto" GrpcServices="Client" />
     <Protobuf Include="Protos\messageReply.proto" GrpcServices="Client">
       <ProtoRoot>Protos\</ProtoRoot>
     </Protobuf>

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Protos\ActionsINChat.proto" />
+    <None Remove="Protos\chat.proto" />
     <None Remove="Protos\messageReply.proto" />
     <None Remove="Protos\MessageRequest.proto" />
     <None Remove="Protos\operationResponse.proto" />
@@ -17,14 +18,20 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\actionsINChat.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\chat.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\messageReply.proto" GrpcServices="Server" ProtoRoot="Protos\" />
     <Protobuf Include="Protos\messageRequest.proto" GrpcServices="Server" ProtoRoot="Protos\" />
     <Protobuf Include="Protos\operationResponse.proto" GrpcServices="Server" ProtoRoot="Protos\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.12.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.28.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.29.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
