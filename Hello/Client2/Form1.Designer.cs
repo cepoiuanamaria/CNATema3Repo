@@ -37,6 +37,7 @@
             this.MainContainer.Name = "MainContainer";
             this.MainContainer.Size = new System.Drawing.Size(376, 543);
             this.MainContainer.TabIndex = 0;
+            this.MainContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.MainContainer_Paint);
             // 
             // Form1
             // 
@@ -48,6 +49,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
