@@ -65,7 +65,7 @@
             // 
             // chatIcon
             // 
-            this.chatIcon.Image = global::Client2.Properties.Resources.ChatIcon1;
+            this.chatIcon.Image = global::Client2.Properties.Resources.ChatIcon;
             this.chatIcon.Location = new System.Drawing.Point(67, 45);
             this.chatIcon.Name = "chatIcon";
             this.chatIcon.Size = new System.Drawing.Size(155, 134);

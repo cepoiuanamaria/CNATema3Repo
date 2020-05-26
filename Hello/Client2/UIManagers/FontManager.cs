@@ -24,12 +24,12 @@ public class FontManager
 
     public FontManager()
     {
-        Roboto_Medium15 = new Font(LoadFont(Resources.Roboto_Medium), 15f);
-        Roboto_Medium10 = new Font(LoadFont(Resources.Roboto_Medium), 10f);
-        Roboto_Regular10 = new Font(LoadFont(Resources.Roboto_Regular), 10f);
+        //Roboto_Medium15 = new Font(LoadFont(Resources.Roboto_Medium), 15f);
+        //Roboto_Medium10 = new Font(LoadFont(Resources.Roboto_Medium), 10f);
+        //Roboto_Regular10 = new Font(LoadFont(Resources.Roboto_Regular), 10f);
 
-        Roboto_Medium9 = new Font(LoadFont(Resources.Roboto_Medium), 9f);
-        Roboto_Regular9 = new Font(LoadFont(Resources.Roboto_Regular), 9f);
+        //Roboto_Medium9 = new Font(LoadFont(Resources.Roboto_Medium), 9f);
+        //Roboto_Regular9 = new Font(LoadFont(Resources.Roboto_Regular), 9f);
     }
 
     private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
