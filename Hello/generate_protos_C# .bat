@@ -1,7 +1,7 @@
 setlocal
 
-set GRPC_PATH="C:\Users\BETIvanca\Downloads\vcpkg-master\installed\x86-windows\tools\grpc"
-set PROTOC_PATH="C:\Users\BETIvanca\Downloads\vcpkg-master\installed\x86-windows\tools\protobuf"
+set GRPC_PATH="D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\Hello\Generated\grpc"
+set PROTOC_PATH="D:\UNI\Anul2\Semestrul2\CNA\CNATema3Repo\Hello\Generated\protobuf"
 
 set PROTOS_PATH=Protos
 set OUTPUT_PATH=Generated
