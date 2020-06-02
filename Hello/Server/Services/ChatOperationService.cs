@@ -11,13 +11,14 @@ namespace Server.Services
     //{
     public class ChatOperationService : ChatRooms.ChatRoomsBase
     {
-        private readonly Server.ChatRoom _chatroomService;
+        private readonly ChatRoom _chatroomService;
 
-        public ChatOperationService(Server.ChatRoom chatRoomService)
+        public ChatOperationService(ChatRoom chatRoomService)
         {
             _chatroomService = chatRoomService;
         }
 
+        //override la rpc-ul join din chat.proto
         public override async Task join(IAsyncStreamReader<Message> requestStream, IServerStreamWriter<Message> responseStream, ServerCallContext context)
         {
             if (!await requestStream.MoveNext())

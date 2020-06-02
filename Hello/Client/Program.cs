@@ -68,9 +68,10 @@ namespace Client
 
                 await chat.RequestStream.WriteAsync(new Message { User = userName, Text = $"{userName} has joined the room" });
 
-                string line;
-                while ((line = Console.ReadLine()) != null)
+                //string line;
+                while (true)
                 {
+                    var line = Console.ReadLine();
                     if (line.ToLower() == "bye")
                     {
                         break;

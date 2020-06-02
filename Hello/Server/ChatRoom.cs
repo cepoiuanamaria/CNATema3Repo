@@ -11,10 +11,14 @@ namespace Server
     public class ChatRoom
     {
         private ConcurrentDictionary<String, IServerStreamWriter<Message>> users = new ConcurrentDictionary<string, IServerStreamWriter<Message>>();
+        //adauga useri 
         public void Join(string name, IServerStreamWriter<Message> response) => users.TryAdd(name, response);
+        //scoate useri
         public void Remove(string name) => users.TryRemove(name, out var s);
+        //trimite mesajele pe rand
         public async Task BroadcastMessageAsync(Message message) => await BroadcastMessages(message);
 
+        //trimite mesajele de la fiecare user asteptand ca unul sa trimita primul, inainte sa trimita celalalt
         private async Task BroadcastMessages(Message message)
         {
             foreach (var user in users.Where(x => x.Key != message.User))
@@ -26,7 +30,7 @@ namespace Server
                 };
             }
         }
-
+        //trimite mesajul catre subscriber
         private async Task<Nullable<KeyValuePair<string, IServerStreamWriter<Message>>>> SendMessageToSubscriber(KeyValuePair<string, IServerStreamWriter<Message>> user, Message message)
         {
             try
