@@ -1,73 +1,34 @@
-﻿using Generated;
-using Grpc.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Grpc.Core;
 
 namespace Server
 {
-
-    internal class HelloOperationService : Generated.HelloResponse.HelloResponseBase
+    public class ChatServiceImpl : ChatService.ChatServiceBase
     {
-        public override Task<OperationResponse> SayHello(HelloRequest request, ServerCallContext context)
+        private static HashSet<IServerStreamWriter<ChatMessageFromServer>> responseStreams = new HashSet<IServerStreamWriter<ChatMessageFromServer>>();
+
+        public override async Task chat(IAsyncStreamReader<ChatMessage> requestStream,
+            IServerStreamWriter<ChatMessageFromServer> responseStream,
+            ServerCallContext context)
         {
-            System.Console.WriteLine("Hello, " + request.Name + "!");
-            var result = "";
-            return Task.FromResult(new OperationResponse() { Message = result });
-        }
-    }
 
-    class Server : IDisposable
-    {
+            responseStreams.Add(responseStream);
 
-
-        public Grpc.Core.Server GrpcServer { get; private set; }
-
-        public Action CloseServerAction { get; set; }
-
-
-
-
-        public IEnumerable<Grpc.Core.ServerServiceDefinition> Services
-        {
-            get
+            while (await requestStream.MoveNext(CancellationToken.None))
             {
-                yield return Generated.HelloResponse.BindService(new  HelloOperationService());
+                var messageFromClient = requestStream.Current;
+                var message = new ChatMessageFromServer
+                {
+                    Message = messageFromClient
+                };
 
+                foreach (var stream in responseStreams)
+                {
+                    await stream.WriteAsync(message);
+                }
             }
-        }
-
-        public Server(string host, int port)
-        {
-            GrpcServer = new Grpc.Core.Server()
-            {
-                Ports = { new Grpc.Core.ServerPort(host, port, Grpc.Core.ServerCredentials.Insecure) }
-            };
-
-            LoadServices();
-        }
-
-        public void Start()
-        {
-            GrpcServer.Start();
-
-            Console.WriteLine(string.Format("Server started ({0}:{1}).", Configuration.HOST, Configuration.PORT));
-        }
-
-        private void LoadServices()
-        {
-            Services.ToList().ForEach(service => GrpcServer.Services.Add(service));
-        }
-
-        public void Dispose()
-        {
-            CloseServerAction.Invoke();
-            GrpcServer.ShutdownAsync().Wait();
-            var port = GrpcServer.Ports.FirstOrDefault();
-            Console.WriteLine("Server closed ({0}:{1}).", Configuration.HOST, Configuration.PORT);
         }
     }
 }
-
-

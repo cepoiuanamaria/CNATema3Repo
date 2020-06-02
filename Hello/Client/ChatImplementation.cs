@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Client
 {
-    public static class Program
+    public static class ChatImplementation
     { 
       const string Host = "localhost";
       const int Port = 16842;
@@ -13,7 +13,7 @@ namespace Client
 
             public static string ClientName;
 
-        static Program()
+        static ChatImplementation()
         {
             // Create a channel
             var channel = new Channel(Host + ":" + Port, ChannelCredentials.Insecure);
