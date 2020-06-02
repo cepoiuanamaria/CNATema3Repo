@@ -1,31 +1,32 @@
-﻿using System;
-using Client;
-using Grpc.Core;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Server
 {
-    class Program
+    public class Program
     {
-        const string Host = "localhost";
-        const int Port = 16842;
-
         public static void Main(string[] args)
         {
-            var grpcServer = new Grpc.Core.Server
-            {
-                Services = { ChatService.BindService(new ChatImplementation()) },
-                Ports = { new ServerPort(Host, Port, ServerCredentials.Insecure) }
-            };
-
-            grpcServer.Start();
-
-            Console.WriteLine("Port: " + Port);
-            Console.WriteLine("Press any key to stop the server...");
-            Console.ReadKey();
-
-            grpcServer.ShutdownAsync().Wait();
+            Console.Title = "Server";
+            CreateHostBuilder(args).Build().Run();
         }
-    }
 
-   
+        // Additional configuration is required to successfully run gRPC on macOS.
+        // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                    //webBuilder.ConfigureKestrel((context, options) =>
+                    //{
+                    //    options.Limits.MinRequestBodyDataRate = null;
+                    //});
+                });
+    }
 }
