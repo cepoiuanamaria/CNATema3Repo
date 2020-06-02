@@ -74,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Client\Client.csproj">
+      <Project>{A445462B-4CEC-49A2-9EBE-0616179479FE}</Project>
+      <Name>Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Generated\Generated.csproj">
       <Project>{a26593cb-f3da-4112-ad6c-9e22ec805eeb}</Project>
       <Name>Generated</Name>
