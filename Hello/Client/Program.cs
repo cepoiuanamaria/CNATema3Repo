@@ -1,89 +1,74 @@
 ﻿using Grpc.Core;
-using Grpc.Net.Client;
-using Server;
-using Server.Protos;
-using System;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading;
 
 namespace Client
 {
-    class Program
-    {
-        static void Main(string[] args)
+    public static class Program
+    { 
+      const string Host = "localhost";
+      const int Port = 16842;
+
+        private static ChatService.ChatServiceClient _chatService;
+            private static AsyncDuplexStreamingCall<ChatMessage, ChatMessageFromServer> _call;
+
+            public static string ClientName;
+
+        static Program()
         {
-            Console.Title = "Client";
-            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            // Create a channel
+            var channel = new Channel(Host + ":" + Port, ChannelCredentials.Insecure);
 
-            var client1 = new MessageReply.MessageReplyClient(channel);
+            // Create a client with the channel
+            _chatService = new ChatService.ChatServiceClient(channel);
 
-            Console.Write("Name1: ");
-
-            var response1 = client1.SayHello(new MessageRequest
-            {
-                Name = Console.ReadLine(),
-            });
-            Console.WriteLine(response1.Message);
-
-            var client2 = new MessageReply.MessageReplyClient(channel);
-
-            Console.Write("Name2: ");
-
-            var response2 = client2.SayHello(new MessageRequest
-            {
-                Name = Console.ReadLine(),
-            });
-            Console.WriteLine(response2.Message);
-
-            // Shutdown
-            channel.ShutdownAsync().Wait();
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            openConnectionServer();
         }
-        //static async Task Main(string[] args)
-        //{
-        //    Console.Title = "Client";
-        //    Console.Write("Username: ");
-        //    var userName = Console.ReadLine();
-        //    //Include portul serverului grpc ca si argument al aplicatiei
-        //    var port = args.Length > 0 ? args[0] : "5001";
 
-        //    var channel = GrpcChannel.ForAddress("https://localhost:" + port);
-        //    var client = new ChatRoom.ChatRoomClient(channel);
+        public static async void openConnectionServer()
+        {
+            // Open a connection to the server
+            try
+            {
+                using (_call = _chatService.chat())
+                {
+                    // Read messages from the response stream
+                    while (await _call.ResponseStream.MoveNext(CancellationToken.None))
+                    {
+                        var serverMessage = _call.ResponseStream.Current;
+                        var otherClientMessage = serverMessage.Message;
 
-        //    using (var chat = client.join())
-        //    {
-        //        _ = Task.Run(async () =>
-        //        {
-        //            while (await chat.ResponseStream.MoveNext(cancellationToken: CancellationToken.None))
-        //            {
-        //                var response = chat.ResponseStream.Current;
-        //                Console.WriteLine($"{response.User}: {response.Text}");
-        //            }
-        //        });
+                        Message.RecieveMessage(otherClientMessage.From, otherClientMessage.Message);
+                    }
+                }
+            }
+            catch (RpcException)
+            {
+                _call = null;
+                throw;
+            }
+        }
 
-        //        await chat.RequestStream.WriteAsync(new Message { User = userName, Text = $"{userName} has joined the room" });
+        public static async void sendButton_Execute(string clientMessage)
+        {
+            // Create a chat message
+            var message = new ChatMessage
+            {
+                From = ClientName,
+                Message = clientMessage
+            };
+            // Send the message
 
-        //        string line;
-        //        while ((line = Console.ReadLine()) != null)
-        //        {
-        //            if (line.ToLower() == "bye")
-        //            {
-        //                break;
-        //            }
-        //            await chat.RequestStream.WriteAsync(new Message { User = userName, Text = line });
-        //        }
-        //        await chat.RequestStream.CompleteAsync();
-        //    }
-        //    Console.WriteLine("Disconnecting");
-        //    channel.ShutdownAsync().Wait();
-        //    Console.WriteLine("Press any key to exit...");
-        //   Console.ReadKey();
-        //}
+            if (_call != null)
+            {
+                await _call.RequestStream.WriteAsync(message);
+            }
+        }
 
+        public static void ChatClosing()
+        {
+            _call.RequestStream.CompleteAsync();
+        }
     }
+
 }
+
