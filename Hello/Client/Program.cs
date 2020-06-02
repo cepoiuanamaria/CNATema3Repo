@@ -53,7 +53,7 @@ namespace Client
             var port = args.Length > 0 ? args[0] : "5001";
 
             var channel = GrpcChannel.ForAddress("https://localhost:" + port);
-            var client = new ChatRoom.ChatRoomClient(channel);
+            var client = new ChatRooms.ChatRoomsClient(channel);
 
             using (var chat = client.join())
             {

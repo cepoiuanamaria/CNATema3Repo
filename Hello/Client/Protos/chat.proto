@@ -4,7 +4,7 @@ option csharp_namespace = "Server.Protos";
 
 package Chat;
 
-service ChatRoom{
+service ChatRooms{
 	rpc join (stream Message) returns (stream Message) {}
 }
 
