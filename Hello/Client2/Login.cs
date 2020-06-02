@@ -34,7 +34,11 @@ namespace Client2
 
         private void signIn_Click(object sender, EventArgs e)
         {
-
+           
+            Send send = new Send();
+            send.ShowDialog();
+            
+           
         }
     }
 }

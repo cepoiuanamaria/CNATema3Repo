@@ -83,7 +83,7 @@
             this.Controls.Add(this.yourName);
             this.Controls.Add(this.chatIcon);
             this.Name = "Login";
-            this.Size = new System.Drawing.Size(290, 500);
+            this.Size = new System.Drawing.Size(300, 500);
             ((System.ComponentModel.ISupportInitialize)(this.chatIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

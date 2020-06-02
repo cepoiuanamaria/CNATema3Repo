@@ -33,9 +33,9 @@
             // 
             // MainContainer
             // 
-            this.MainContainer.Location = new System.Drawing.Point(12, 75);
+            this.MainContainer.Location = new System.Drawing.Point(-1, 64);
             this.MainContainer.Name = "MainContainer";
-            this.MainContainer.Size = new System.Drawing.Size(376, 543);
+            this.MainContainer.Size = new System.Drawing.Size(324, 524);
             this.MainContainer.TabIndex = 0;
             this.MainContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.MainContainer_Paint);
             // 
@@ -43,7 +43,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 630);
+            this.ClientSize = new System.Drawing.Size(323, 588);
             this.Controls.Add(this.MainContainer);
             this.MinimizeBox = false;
             this.Name = "Form1";

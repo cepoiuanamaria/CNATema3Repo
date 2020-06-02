@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
 namespace Server
@@ -22,11 +24,20 @@ namespace Server
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                    //webBuilder.ConfigureKestrel((context, options) =>
+                    //webBuilder.ConfigureKestrel(options =>
                     //{
-                    //    options.Limits.MinRequestBodyDataRate = null;
+                    //    options.Listen(IPAddress.Any, 5001, listenOptions =>
+                    //    {
+                    //        listenOptions.Protocols = HttpProtocols.Http2;
+                    //        listenOptions.UseHttps("<path to .pfx file>",
+                    //            "<certificate password>");
+                    //    });
                     //});
+                    webBuilder.ConfigureKestrel((context, options) =>
+                    {
+                        options.Limits.MinRequestBodyDataRate = null;
+                    });
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

@@ -19,6 +19,7 @@ namespace Server
         {
             services.AddGrpc();
             services.AddSingleton<Server.ChatRoom>();
+            //services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +35,8 @@ namespace Server
             //}
 
             app.UseRouting();
+
+            //app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

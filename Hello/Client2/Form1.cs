@@ -53,7 +53,7 @@ namespace Client2
         private void Form1_Load(object sender, EventArgs e)
         {
             _instance = this;
-            MainContainer.Controls.Add(new Login());
+            MainContainer.Controls.Add(new Login() { Dock = DockStyle.Fill });
         }
     }
 }

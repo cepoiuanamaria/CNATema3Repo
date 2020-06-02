@@ -45,6 +45,7 @@
     </Protobuf>
     <Protobuf Include="Protos\messageRequest.proto" GrpcServices="Client" />
     <Protobuf Include="Protos\operationResponse.proto" GrpcServices="Client" />
+    <Content Include="@(Protobuf)" LinkBase="" />
   </ItemGroup>
 
 </Project>
