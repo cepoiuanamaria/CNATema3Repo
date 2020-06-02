@@ -28,6 +28,10 @@ namespace Server
             {
                 app.UseDeveloperExceptionPage();
             }
+            //else
+            //{
+            //    app.UseHttpsRedirection();
+            //}
 
             app.UseRouting();
 

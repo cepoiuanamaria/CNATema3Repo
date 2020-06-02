@@ -23,6 +23,10 @@ namespace Server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureKestrel((context, options) =>
+                    {
+                        options.Limits.MinRequestBodyDataRate = null;
+                    });
                 });
     }
 }
